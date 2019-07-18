@@ -6,7 +6,12 @@
       Le <span class="subtitle-1">SIRH</span> le <span class="subtitle-2">+ ZEN</span> <br> pour gérer vos formations
     </h1>
 
-    <router-link :to="{name: 'Registration'}" tag="button" class="btn btn-registration">
+    <router-link
+      v-ripple.mouseover
+      :to="{name: 'Registration'}"
+      tag="button"
+      class="btn btn-registration"
+    >
       S'inscrire
     </router-link>
   </div>

@@ -14,9 +14,6 @@ export default {
       return this.$route.name === "Login" ? "home" : ""
     },
   },
-  created() {
-    console.log(this.$route)
-  },
 }
 </script>
 
