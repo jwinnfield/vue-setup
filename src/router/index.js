@@ -22,6 +22,11 @@ const router = new Router({
       component: () => import(/* webpackChunkName: "login" */ "@/views/Login.vue"),
     },
     {
+      path: "/registration",
+      name: "Registration",
+      component: () => import(/* webpackChunkName: "registration" */ "@/views/registration/Registration.vue"),
+    },
+    {
       path: "*",
       name: "NoFound",
       component: () => import(/* webpackChunkName: "notfound" */ "@/views/NotFound.vue"),
@@ -32,8 +37,10 @@ const router = new Router({
 
 router.beforeEach( (to, from, next) => {
   if(to.matched.some(record => record.meta.requiresAuth) && !store.getters.isAuthenticated) {
+    console.log(to)
+    console.log(from)
     next({
-      path: "/login",
+      name: "Login",
       query: {
         redirect: to.fullPath,
       },

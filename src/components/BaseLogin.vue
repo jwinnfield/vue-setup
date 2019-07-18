@@ -1,10 +1,14 @@
 <template>
   <form class="base-login" @submit.prevent="login(username, password)">
-    <input v-model="username" type="text" placeholder="Login">
+    <!-- <input v-model="username" type="text" placeholder="Login">
     <input v-model="password" type="text" placeholder="Mot de passe">
     <button type="submit">
       Connection
     </button>
+
+    <h1 class="test">
+      HELLO WORLD, hello world !
+    </h1> -->
   </form>
 </template>
 

@@ -1,6 +1,5 @@
 <template>
-  <header>
-    <!-- <img src="@Assets/img/logo.png" alt="Logo Formatissia Lite"> -->
+  <header :class="headerClass">
     <div class="logo" />
     <div class="triangle-left" />
     <div class="triangle-right" />
@@ -10,6 +9,14 @@
 <script>
 export default {
   name: "Header",
+  computed: {
+    headerClass() {
+      return this.$route.name === "Login" ? "home" : ""
+    },
+  },
+  created() {
+    console.log(this.$route)
+  },
 }
 </script>
 
@@ -20,10 +27,13 @@ header {
   align-items: flex-end;
   width: 100%;
   height: 296px;
-  background-image: url("~@Assets/img/header.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+
+  &.home {
+    background-image: url("~@Assets/img/header.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 
   .triangle-left,
   .triangle-right {

@@ -37,9 +37,9 @@ export default {
 
   body {
     margin: 0;
-  }
-
-  #app {
+    min-height: 100vh;
     background-color: $_BACKGROUND_COLOR;
+    font-family: "Quicksand-Regular";
+    color: $_PRIMARY_COLOR;
   }
 </style>
