@@ -16,7 +16,7 @@ export default {
 .forma--v-card {
   width: auto;
   max-width: 62rem;
-  height: auto;
+  min-height: auto;
   padding: 2rem;
   border-radius: 2.5rem;
   border: 0.2rem solid $_SECONDARY_COLOR;

@@ -71,7 +71,7 @@ export default {
         top: 2rem;
         z-index: -1;
         width: 100%;
-        height: 0.3rem;
+        min-height: 0.3rem;
         border: none;
         background-color: $_SECONDARY_COLOR;
         transform: translateX(50%);
@@ -92,7 +92,7 @@ export default {
           display: flex;
           justify-content: center;
           align-items: center;
-          height: 5rem;
+          min-height: 5rem;
           width: 5rem;
           margin: 0 0 0.5rem 0;
           font-size: 2.6rem;

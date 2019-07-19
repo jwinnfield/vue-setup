@@ -25,7 +25,7 @@ header {
   display: flex;
   align-items: flex-end;
   width: 100%;
-  height: 15.8rem;
+  min-height: 15.8rem;
   background: linear-gradient(
     0deg,
     $_PRIMARY_COLOR 35%,
@@ -33,7 +33,7 @@ header {
   );
 
   &.is-home {
-    height: 29.6rem;
+    min-height: 29.6rem;
     background-image: url("~@Assets/img/header.jpg");
     background-size: cover;
     background-position: center;
@@ -43,7 +43,7 @@ header {
   .forma--triangle-left,
   .forma--triangle-right {
     width: 50%;
-    height: 11.8rem;
+    min-height: 11.8rem;
     background: #f5f6f7;
     clip-path: polygon(100% 0, 0 100%, 100% 100%);
   }
