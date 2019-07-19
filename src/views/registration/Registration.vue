@@ -1,9 +1,42 @@
 <template>
-  <div />
+  <v-stepper :steps="steps" />
 </template>
 
 <script>
+import VStepper from "@/components/utils/VStepper"
+
 export default {
   name: "Registration",
+  components: {
+    VStepper,
+  },
+  data() {
+    return {
+      index: 0,
+      steps: [
+        {
+          header: "1",
+          title: "VOTRE IDENTITÉ",
+          component: () => import("@/components/utils/VCard"),
+        },
+        {
+          header: "2",
+          title: "VOTRE ENTREPRISE",
+          component: () => import("@/components/utils/VCard"),
+        },
+        {
+          header: "3",
+          title: "CRÉATION DE COMPTE",
+          component: () => import("@/components/utils/VCard"),
+        },
+        {
+          header: "4",
+          title: "VALIDATION",
+          component: () => import("@/components/utils/VCard"),
+        },
+      ],
+    }
+  },
 }
 </script>
+
