@@ -1,19 +1,19 @@
 <template>
   <v-card>
-    <form class="forms" @submit.prevent="updateActiveIndex(1)">
+    <form class="forma--forms" @submit.prevent="updateActiveIndex(1)">
       <v-container title="Informations administratives">
-        <input type="text" class="input" placeholder="Raison sociale" />
-        <input type="text" class="input" placeholder="Siren" />
-        <input type="text" class="input" placeholder="Siret" />
-        <input type="text" class="input" placeholder="Code APE" />
+        <input type="text" class="c--input" placeholder="Raison sociale" />
+        <input type="text" class="c--input" placeholder="Siren" />
+        <input type="text" class="c--input" placeholder="Siret" />
+        <input type="text" class="c--input" placeholder="Code APE" />
       </v-container>
       <v-container title="Informations administratives">
-        <input type="text" class="input" placeholder="Raison sociale" />
-        <input type="text" class="input" placeholder="Siren" />
-        <input type="text" class="input" placeholder="Siret" />
-        <input type="text" class="input" placeholder="Code APE" />
+        <input type="text" class="c--input" placeholder="Raison sociale" />
+        <input type="text" class="c--input" placeholder="Siren" />
+        <input type="text" class="c--input" placeholder="Siret" />
+        <input type="text" class="c--input" placeholder="Code APE" />
       </v-container>
-      <button class="btn" type="submit">
+      <button class="c--btn" type="submit">
         Suivant
       </button>
     </form>

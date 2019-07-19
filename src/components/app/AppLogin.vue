@@ -1,5 +1,5 @@
 <template>
-  <form class="base-login" @submit.prevent="login(username, password)">
+  <form class="forma--base-login" @submit.prevent="login(username, password)">
     <!-- <input v-model="username" type="text" placeholder="Login">
     <input v-model="password" type="text" placeholder="Mot de passe">
     <button type="submit">

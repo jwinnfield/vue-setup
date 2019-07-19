@@ -1,21 +1,23 @@
 <template>
-  <div class="stepper">
-    <ul class="progress-bar">
+  <div class="forma--stepper">
+    <ol class="forma--progress-bar">
       <li
         v-for="({title, header}, index) in steps"
         :key="title"
-        class="progress-bar-block"
+        class="forma--progress-bar-block"
         @click="$emit('input', index)"
       >
-        <div class="progress-bar-step">
-          <p v-ripple :class="{active: index === value}">
+        <div class="forma--progress-bar-step">
+          <p v-ripple :class="{'is-active': index <= value}">
             {{ header }}
           </p>
-          <h6>{{ title }}</h6>
+          <h6 :class="{'is-active': index <= value}">
+            {{ title }}
+          </h6>
         </div>
-        <hr v-if="index !== steps.length -1" :class="{active: index === value}">
+        <hr v-if="index !== steps.length -1" :class="{'is-active': index <= value}">
       </li>
-    </ul>
+    </ol>
     <component :is="component" />
   </div>
 </template>
@@ -44,19 +46,19 @@ export default {
 <style lang="scss" scoped>
 @import "~@/scss/index.scss";
 
-.stepper {
+.forma--stepper {
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  .progress-bar {
+  .forma--progress-bar {
     display: flex;
     width: 100%;
     max-width: 128rem;
     padding: 0;
     margin: 5rem auto 6rem auto;
 
-    .progress-bar-block {
+    .forma--progress-bar-block {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -75,12 +77,12 @@ export default {
         transform: translateX(50%);
         transition: 0.5s all;
 
-        &.active {
+        &.is-active {
           background-color: $_PRIMARY_COLOR
         }
       }
 
-      .progress-bar-step {
+      .forma--progress-bar-step {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -102,7 +104,7 @@ export default {
           cursor: pointer;
           transition: 0.5s all;
 
-          &.active {
+          &.is-active {
             color: $_PRIMARY_COLOR;
             background-color: $_SECONDARY_COLOR;
             border: 0.3rem solid $_PRIMARY_COLOR;
@@ -114,6 +116,10 @@ export default {
           font-size: 1.4rem;
           color: $_SECONDARY_COLOR;
           text-align: center;
+
+          &.is-active {
+            color: $_PRIMARY_COLOR;
+          }
         }
       }
     }

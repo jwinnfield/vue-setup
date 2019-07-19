@@ -1,16 +1,16 @@
 <template>
-  <div class="home">
+  <div class="forma--home">
     <app-login />
 
-    <h1 class="title">
-      Le <span class="subtitle-1">SIRH</span> le <span class="subtitle-2">+ ZEN</span> <br> pour gérer vos formations
+    <h1 class="forma--title">
+      Le <span class="forma--subtitle-1">SIRH</span> le <span class="forma--subtitle-2">+ ZEN</span> <br> pour gérer vos formations
     </h1>
 
     <router-link
       v-ripple.mouseover
       :to="{name: 'Registration'}"
       tag="button"
-      class="btn btn-registration"
+      class="c--btn forma--btn-registration"
     >
       S'inscrire
     </router-link>
@@ -31,12 +31,12 @@ export default {
 <style lang="scss" scoped>
   @import "@/scss/components/btn.scss";
 
-  .home {
+  .forma--home {
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    .title {
+    .forma--title {
       text-align: center;
       margin-top: 5.0rem;
       margin-bottom: 0;
@@ -44,16 +44,16 @@ export default {
       font-size: 2.8rem;
       font-family: "Quicksand-Light";
 
-      .subtitle-1, .subtitle-2 {
+      .forma--subtitle-1, .forma--subtitle-2 {
         font-weight: 700;
       }
 
-      .subtitle-2 {
+      .forma--subtitle-2 {
         color: $_SECONDARY_COLOR;
       }
     }
 
-    .btn-registration {
+    .forma--btn-registration {
       margin-top: 4.0rem;
     }
   }

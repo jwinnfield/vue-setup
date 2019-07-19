@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h3 class="title">
+    <h3 class="forma--title">
       {{ title }}
     </h3>
     <slot></slot>
@@ -25,7 +25,7 @@ section {
 	flex-direction: column;
 	align-items: center;
 
-	.title {
+	.forma--title {
 		margin-bottom: 1.5rem;
 		margin-top: 0;
 	}

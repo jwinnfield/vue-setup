@@ -1,8 +1,8 @@
 <template>
   <header :class="classCustom">
-    <div class="logo" :class="classCustom" />
-    <div class="triangle-left" />
-    <div class="triangle-right" />
+    <div class="forma--logo" :class="classCustom" />
+    <div class="forma--triangle-left" />
+    <div class="forma--triangle-right" />
   </header>
 </template>
 
@@ -11,7 +11,7 @@ export default {
   name: "Header",
   computed: {
     classCustom() {
-      return this.$route.name === "Login" ? "home" : ""
+      return this.$route.name === "Login" ? "is-home" : ""
     },
   },
 }
@@ -32,7 +32,7 @@ header {
     $_SECONDARY_COLOR 100%
   );
 
-  &.home {
+  &.is-home {
     height: 29.6rem;
     background-image: url("~@Assets/img/header.jpg");
     background-size: cover;
@@ -40,19 +40,19 @@ header {
     background-repeat: no-repeat;
   }
 
-  .triangle-left,
-  .triangle-right {
+  .forma--triangle-left,
+  .forma--triangle-right {
     width: 50%;
     height: 11.8rem;
     background: #f5f6f7;
     clip-path: polygon(100% 0, 0 100%, 100% 100%);
   }
 
-  .triangle-left {
+  .forma--triangle-left {
     transform: scaleX(-1);
   }
 
-  .logo {
+  .forma--logo {
     position: absolute;
     top: 0;
     width: 100%;
@@ -63,7 +63,7 @@ header {
     background-position-y: 3rem;
     background-size: 22rem auto;
 
-    &.home {
+    &.is-home {
       background-position-y: 10rem;
       background-size: 28rem auto;
     }

@@ -1,5 +1,5 @@
 <template>
-  <div class="v-card">
+  <div class="forma--v-card">
     <slot />
   </div>
 </template>
@@ -13,7 +13,7 @@ export default {
 <style lang="scss" scoped>
 @import "~@/scss/index.scss";
 
-.v-card {
+.forma--v-card {
   width: auto;
   max-width: 62rem;
   height: auto;
