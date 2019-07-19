@@ -34,12 +34,22 @@ export default {
 
 <style lang="scss">
   @import "~@/scss/index.scss";
+  html {
+    height: 100%;
+    font-size: 62.5%; // 10px default => rem
+    // box-sizing: border-box;
+  }
+
+  *, *:before, *:after{
+    box-sizing: inherit;
+  }
 
   body {
     margin: 0;
-    min-height: 100vh;
+    height: 100%;
     background-color: $_BACKGROUND_COLOR;
     font-family: "Quicksand-Regular";
+    font-size: 1.6rem;
     color: $_PRIMARY_COLOR;
   }
 </style>

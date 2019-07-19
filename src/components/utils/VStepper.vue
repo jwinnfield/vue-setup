@@ -52,9 +52,9 @@ export default {
   .progress-bar {
     display: flex;
     width: 100%;
-    max-width: 1280px;
+    max-width: 128rem;
     padding: 0;
-    margin: 50px auto 60px auto;
+    margin: 5rem auto 6rem auto;
 
     .progress-bar-block {
       display: flex;
@@ -65,14 +65,14 @@ export default {
       list-style-type: none;
 
       hr {
-        width: 100%;
-        height: 3px;
         position: absolute;
-        top: 20px;
+        top: 2rem;
+        z-index: -1;
+        width: 100%;
+        height: 0.3rem;
+        border: none;
         background-color: $_SECONDARY_COLOR;
         transform: translateX(50%);
-        border: none;
-        z-index: -1;
         transition: 0.5s all;
 
         &.active {
@@ -90,13 +90,13 @@ export default {
           display: flex;
           justify-content: center;
           align-items: center;
-          height: 50px;
-          width: 50px;
-          margin: 0 0 5px 0;
-          font-size: 26px;
+          height: 5rem;
+          width: 5rem;
+          margin: 0 0 0.5rem 0;
+          font-size: 2.6rem;
           font-family: "Quicksand-Bold";
           color: $_SECONDARY_COLOR;
-          border: 3px solid $_SECONDARY_COLOR;
+          border: 0.3rem solid $_SECONDARY_COLOR;
           border-radius: 50%;
           background-color: $_BACKGROUND_COLOR;
           cursor: pointer;
@@ -105,13 +105,13 @@ export default {
           &.active {
             color: $_PRIMARY_COLOR;
             background-color: $_SECONDARY_COLOR;
-            border: 3px solid $_PRIMARY_COLOR;
+            border: 0.3rem solid $_PRIMARY_COLOR;
           }
         }
 
         h6 {
           margin: 0;
-          font-size: 14px;
+          font-size: 1.4rem;
           color: $_SECONDARY_COLOR;
           text-align: center;
         }

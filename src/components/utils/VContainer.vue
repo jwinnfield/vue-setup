@@ -26,7 +26,7 @@ section {
 	align-items: center;
 
 	.title {
-		margin-bottom: 15px;
+		margin-bottom: 1.5rem;
 		margin-top: 0;
 	}
 }

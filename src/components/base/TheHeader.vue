@@ -25,11 +25,15 @@ header {
   display: flex;
   align-items: flex-end;
   width: 100%;
-  height:158px;
-  background: linear-gradient(0deg, $_PRIMARY_COLOR 35%, $_SECONDARY_COLOR 100%);
+  height: 15.8rem;
+  background: linear-gradient(
+    0deg,
+    $_PRIMARY_COLOR 35%,
+    $_SECONDARY_COLOR 100%
+  );
 
   &.home {
-    height: 296px;
+    height: 29.6rem;
     background-image: url("~@Assets/img/header.jpg");
     background-size: cover;
     background-position: center;
@@ -39,7 +43,7 @@ header {
   .triangle-left,
   .triangle-right {
     width: 50%;
-    height: 118px;
+    height: 11.8rem;
     background: #f5f6f7;
     clip-path: polygon(100% 0, 0 100%, 100% 100%);
   }
@@ -48,7 +52,7 @@ header {
     transform: scaleX(-1);
   }
 
-  .logo{
+  .logo {
     position: absolute;
     top: 0;
     width: 100%;
@@ -56,12 +60,12 @@ header {
     background-image: url("~@Assets/img/logo.png");
     background-repeat: no-repeat;
     background-position-x: center;
-      background-position-y: 30px;
-      background-size: 220px auto;
+    background-position-y: 3rem;
+    background-size: 22rem auto;
 
-    &.home{
-      background-position-y: 100px;
-      background-size: 280px auto;
+    &.home {
+      background-position-y: 10rem;
+      background-size: 28rem auto;
     }
   }
 }

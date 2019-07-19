@@ -38,10 +38,10 @@ export default {
 
     .title {
       text-align: center;
-      margin-top: 50px;
+      margin-top: 5.0rem;
       margin-bottom: 0;
       font-weight: 100;
-      font-size: 28px;
+      font-size: 2.8rem;
       font-family: "Quicksand-Light";
 
       .subtitle-1, .subtitle-2 {
@@ -54,7 +54,7 @@ export default {
     }
 
     .btn-registration {
-      margin-top: 40px;
+      margin-top: 4.0rem;
     }
   }
 </style>

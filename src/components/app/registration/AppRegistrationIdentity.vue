@@ -69,6 +69,8 @@ export default {
 @import "~@/scss/components/input.scss";
 
 .identity {
+  width: 28rem;
+
   .forms {
     display: flex;
     flex-direction: column;
@@ -77,10 +79,10 @@ export default {
     .inputs-block {
       display: flex;
       flex-direction: column;
-      margin-bottom: 40px;
+      margin-bottom: 4rem;
 
       input:not(:first-child) {
-        margin-top: 20px;
+        margin-top: 2rem;
       }
     }
   }

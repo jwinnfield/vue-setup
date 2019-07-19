@@ -15,10 +15,10 @@ export default {
 
 .v-card {
   width: auto;
-  max-width: 620px;
+  max-width: 62rem;
   height: auto;
-  padding: 20px;
-  border-radius: 25px;
-  border: 2px solid $_SECONDARY_COLOR;
+  padding: 2rem;
+  border-radius: 2.5rem;
+  border: 0.2rem solid $_SECONDARY_COLOR;
 }
 </style>
