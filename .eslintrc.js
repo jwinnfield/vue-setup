@@ -190,6 +190,7 @@ module.exports = {
     "template-curly-spacing": [ "error", "always" ],
 
     // VUEjs
+    "vue/html-self-closing": "off",
     "vue/max-attributes-per-line": [
       "error",
       {
