@@ -24,7 +24,7 @@ const router = new Router({
     {
       path: "/registration",
       name: "Registration",
-      component: () => import(/* webpackChunkName: "registration" */ "@/views/registration/Registration.vue"),
+      component: () => import(/* webpackChunkName: "registration" */ "@/views/Registration.vue"),
     },
     {
       path: "*",

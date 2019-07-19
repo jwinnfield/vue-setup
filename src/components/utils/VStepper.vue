@@ -2,18 +2,18 @@
   <div class="stepper">
     <ul class="progress-bar">
       <li
-        v-for="(step, index) in steps"
-        :key="step.title"
+        v-for="({title, header}, index) in steps"
+        :key="title"
         class="progress-bar-block"
-        @click="changeStep(step.component)"
+        @click="$emit('input', index)"
       >
         <div class="progress-bar-step">
-          <p v-ripple>
-            {{ step.header }}
+          <p v-ripple :class="{active: index === value}">
+            {{ header }}
           </p>
-          <h6>{{ step.title }}</h6>
+          <h6>{{ title }}</h6>
         </div>
-        <hr v-if="index !== steps.length -1">
+        <hr v-if="index !== steps.length -1" :class="{active: index === value}">
       </li>
     </ul>
     <component :is="component" />
@@ -24,19 +24,18 @@
 export default {
   name: "VStepper",
   props: {
+    value: {
+      type: Number,
+      required: true,
+    },
     steps: {
       type: Array,
       required: true,
     },
   },
-  data() {
-    return {
-      component: this.steps[0].component,
-    }
-  },
-  methods: {
-    changeStep(component) {
-      this.component = component
+  computed: {
+    component() {
+      return this.steps[this.value].component
     },
   },
 }
@@ -74,6 +73,11 @@ export default {
         transform: translateX(50%);
         border: none;
         z-index: -1;
+        transition: 0.5s all;
+
+        &.active {
+          background-color: $_PRIMARY_COLOR
+        }
       }
 
       .progress-bar-step {
@@ -96,6 +100,13 @@ export default {
           border-radius: 50%;
           background-color: $_BACKGROUND_COLOR;
           cursor: pointer;
+          transition: 0.5s all;
+
+          &.active {
+            color: $_PRIMARY_COLOR;
+            background-color: $_SECONDARY_COLOR;
+            border: 3px solid $_PRIMARY_COLOR;
+          }
         }
 
         h6 {

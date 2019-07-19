@@ -1,6 +1,6 @@
 <template>
   <v-card class="identity">
-    <form class="forms" @submit.prevent="login(username, password)">
+    <form class="forms" @submit.prevent="updateActiveIndex(1)">
       <div class="inputs-block">
         <input
           v-model="surname"
@@ -28,12 +28,12 @@
         />
         <input
           v-model="tel"
-          type="tel"
           placeholder="Téléphone"
           class="input"
+          type="tel"
         />
       </div>
-      <button type="submit" class="btn">
+      <button v-ripple.mouseover type="submit" class="btn">
         Suivant
       </button>
     </form>
@@ -42,6 +42,7 @@
 
 <script>
 import VCard from "@/components/utils/VCard"
+import { mapMutations } from "vuex"
 
 export default {
   name: "AppRegistrationIdentity",
@@ -56,6 +57,9 @@ export default {
       email: "",
       tel: "",
     }
+  },
+  methods: {
+    ...mapMutations("stepper", [ "updateActiveIndex" ] ),
   },
 }
 </script>

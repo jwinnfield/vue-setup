@@ -1,9 +1,10 @@
 <template>
-  <v-stepper :steps="steps" />
+  <v-stepper :value="activeIndex" :steps="steps" @input="updateActiveIndex($event)" />
 </template>
 
 <script>
 import VStepper from "@/components/utils/VStepper"
+import { mapState, mapMutations } from "vuex"
 
 export default {
   name: "Registration",
@@ -12,7 +13,6 @@ export default {
   },
   data() {
     return {
-      index: 0,
       steps: [
         {
           header: "1",
@@ -22,7 +22,7 @@ export default {
         {
           header: "2",
           title: "VOTRE ENTREPRISE",
-          component: () => import(/* webpackChunkName: "registration" */ "@/components/utils/VCard"),
+          component: () => import(/* webpackChunkName: "registration" */ "@/components/app/registration/AppRegistrationEntreprise"),
         },
         {
           header: "3",
@@ -36,6 +36,12 @@ export default {
         },
       ],
     }
+  },
+  computed: {
+    ...mapState("stepper", [ "activeIndex" ] ),
+  },
+  methods: {
+    ...mapMutations("stepper", [ "updateActiveIndex" ] ),
   },
 }
 </script>
