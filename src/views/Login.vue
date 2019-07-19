@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <base-login />
+    <app-login />
 
     <h1 class="title">
       Le <span class="subtitle-1">SIRH</span> le <span class="subtitle-2">+ ZEN</span> <br> pour gérer vos formations
@@ -18,12 +18,12 @@
 </template>
 
 <script>
-import BaseLogin from "@/components/BaseLogin"
+import AppLogin from "@/components/app/AppLogin"
 
 export default {
   name: "Home",
   components: {
-    BaseLogin,
+    AppLogin,
   },
 }
 </script>

@@ -1,20 +1,20 @@
 <template>
   <div id="app">
-    <base-header />
+    <the-header />
     <router-view />
-    <base-footer />
+    <the-footer />
   </div>
 </template>
 
 <script>
-import BaseHeader from "@/components/BaseHeader"
-import BaseFooter from "@/components/BaseFooter"
+import TheHeader from "@/components/base/TheHeader"
+import TheFooter from "@/components/base/TheFooter"
 import { mapActions } from "vuex"
 
 export default {
   components: {
-    BaseHeader,
-    BaseFooter,
+    TheHeader,
+    TheFooter,
   },
   created() {
     this.$axios.interceptors.response.use(undefined, err => new Promise( (resolve, reject) => {
