@@ -1,0 +1,12 @@
+@import "@/scss/_const.scss";
+
+.input {
+    color: $_INPUT_COLOR;
+    font-size: 14px;
+    padding: 8px;
+    background: $_INPUT_BACKGROUND_COLOR;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    width: 249px;
+}
