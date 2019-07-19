@@ -1,16 +1,22 @@
 <template>
   <div class="stepper">
     <ul class="progress-bar">
-      <li v-for="({header, title}, index) in steps" :key="title" class="progress-bar-block">
+      <li
+        v-for="(step, index) in steps"
+        :key="step.title"
+        class="progress-bar-block"
+        @click="changeStep(step.component)"
+      >
         <div class="progress-bar-step">
           <p v-ripple>
-            {{ header }}
+            {{ step.header }}
           </p>
-          <h6>{{ title }}</h6>
+          <h6>{{ step.title }}</h6>
         </div>
         <hr v-if="index !== steps.length -1">
       </li>
     </ul>
+    <component :is="component" />
   </div>
 </template>
 
@@ -23,6 +29,16 @@ export default {
       required: true,
     },
   },
+  data() {
+    return {
+      component: this.steps[0].component,
+    }
+  },
+  methods: {
+    changeStep(component) {
+      this.component = component
+    },
+  },
 }
 </script>
 
@@ -30,6 +46,10 @@ export default {
 @import "~@/scss/index.scss";
 
 .stepper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   .progress-bar {
     display: flex;
     width: 100%;

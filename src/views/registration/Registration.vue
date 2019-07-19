@@ -17,22 +17,22 @@ export default {
         {
           header: "1",
           title: "VOTRE IDENTITÉ",
-          component: () => import("@/components/utils/VCard"),
+          component: () => import(/* webpackChunkName: "registration" */ "@/components/app/registration/AppRegistrationIdentity"),
         },
         {
           header: "2",
           title: "VOTRE ENTREPRISE",
-          component: () => import("@/components/utils/VCard"),
+          component: () => import(/* webpackChunkName: "registration" */ "@/components/utils/VCard"),
         },
         {
           header: "3",
           title: "CRÉATION DE COMPTE",
-          component: () => import("@/components/utils/VCard"),
+          component: () => import(/* webpackChunkName: "registration" */ "@/components/utils/VCard"),
         },
         {
           header: "4",
           title: "VALIDATION",
-          component: () => import("@/components/utils/VCard"),
+          component: () => import(/* webpackChunkName: "registration" */ "@/components/utils/VCard"),
         },
       ],
     }
