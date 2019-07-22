@@ -1,53 +1,59 @@
 <template>
-  <v-card class="forma--identity">
-    <form class="forma--forms" @submit.prevent="updateActiveIndex(1)">
-      <div class="forma--inputs-block">
-        <input
-          v-model="surname"
-          type="text"
-          placeholder="Nom"
-          class="c--input"
-        />
-        <input
-          v-model="name"
-          type="text"
-          placeholder="Prénom"
-          class="c--input"
-        />
-        <input
-          v-model="func"
-          type="text"
-          placeholder="Fonction"
-          class="c--input"
-        />
-        <input
-          v-model="email"
-          type="email"
-          placeholder="E-mail"
-          class="c--input"
-        />
-        <input
-          v-model="tel"
-          placeholder="Téléphone"
-          class="c--input"
-          type="tel"
-        />
-      </div>
-      <button v-ripple.mouseover type="submit" class="c--btn">
-        Suivant
-      </button>
-    </form>
-  </v-card>
+  <form class="forma--forms c--card" @submit.prevent="updateActiveIndex(1)">
+    <v-input
+      v-model="surname"
+      v-validate="'required|alpha_spaces'"
+      placeholder="Nom"
+      name="Nom"
+      :error="errors.first('Nom')"
+    />
+    <v-input
+      v-model="name"
+      v-validate="'required|alpha_spaces'"
+      type="text"
+      placeholder="Prénom"
+      name="Prénom"
+      :error="errors.first('Prénom')"
+    />
+    <v-input
+      v-model="func"
+      v-validate="'required|alpha_spaces'"
+      type="text"
+      name="Fonction"
+      placeholder="Fonction"
+      :error="errors.first('Fonction')"
+    />
+    <v-input
+      v-model="email"
+      v-validate="'required|email'"
+      type="email"
+      name="E-mail"
+      placeholder="E-mail"
+      :error="errors.first('E-mail')"
+    />
+    <v-input
+      v-model="tel"
+      v-validate="'numeric|min:8'"
+      type="tel"
+      name="Téléphone"
+      placeholder="Téléphone"
+      :error="errors.first('Téléphone')"
+    />
+
+    <button v-ripple.mouseover type="submit" class="c--btn forma--btn">
+      Suivant
+    </button>
+  </form>
 </template>
 
 <script>
-import VCard from "@/components/utils/VCard"
+import VInput from "@/components/utils/VInput"
 import { mapMutations } from "vuex"
 
 export default {
   name: "AppRegistrationIdentity",
   components: {
-    VCard,
+    VInput,
   },
   data() {
     return {
@@ -66,25 +72,20 @@ export default {
 
 <style lang="scss" scoped>
 @import "~@/scss/components/btn.scss";
-@import "~@/scss/components/input.scss";
-
-.forma--identity {
-  width: 28rem;
+@import "~@/scss/components/card.scss";
 
   .forma--forms {
     display: flex;
     flex-direction: column;
     align-items: center;
+  width: 28rem;
 
-    .forma--inputs-block {
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 4rem;
-
-      input:not(:first-child) {
-        margin-top: 2rem;
-      }
+    input:not(:first-child) {
+      margin-top: 2rem;
     }
-  }
+
+    .forma--btn {
+      margin-top: 2rem;
+    }
 }
 </style>

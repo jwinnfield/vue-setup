@@ -27,7 +27,8 @@ section {
 
 	.forma--title {
 		margin-bottom: 1.5rem;
-		margin-top: 0;
+    margin-top: 0;
+    font-size: 1.6rem;
 	}
 }
 </style>

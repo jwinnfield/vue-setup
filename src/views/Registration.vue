@@ -27,12 +27,12 @@ export default {
         {
           header: "3",
           title: "CRÉATION DE COMPTE",
-          component: () => import(/* webpackChunkName: "registration" */ "@/components/utils/VCard"),
+          component: () => import(/* webpackChunkName: "registration" */ "@/components/app/registration/AppRegistrationEffectif"),
         },
         {
           header: "4",
           title: "VALIDATION",
-          component: () => import(/* webpackChunkName: "registration" */ "@/components/utils/VCard"),
+          component: () => import(/* webpackChunkName: "registration" */ "@/components/app/registration/AppRegistrationEntreprise"),
         },
       ],
     }
